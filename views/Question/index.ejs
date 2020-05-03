@@ -1,0 +1,45 @@
+<%- include('../Partials/header.ejs') %>
+
+<body>
+    <%- include('../Partials/navbar.ejs') %>
+    
+    <div class="container">
+        <hr>
+            <div class="card bd-callout bd-callout-warning">
+                <div class="card-header border">
+                    <h2><%= pergunta.titulo %></h2><br>
+                    <span class="text">Descrição: <%= pergunta.descricao %></span>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="container">
+
+        <form method="POST" action="/responder">
+            <h4 class="text-monospace" ><i class="far fa-comment-alt"></i> Responda</h4>
+
+            <textarea name="answer" class="form-control" placeholder="Responda a essa pergunta!"></textarea><br>
+            <input type="hidden" name="pergunta" value="<%= pergunta.id  %>">
+            <button type="submit" class="btn btn-secondary">Responder</button>
+            
+        </form>
+            <hr>
+                <div class="d-flex justify-content-center">
+                    <h2 class="text-monospace text-warning">Respostas Recentes</h2>
+                </div>
+
+                <% respostas.forEach(resposta => { %>
+                    <br>
+                    <div class="card bd-callout bd-callout-info">
+                        <div class="card-header border">
+                            <p><i class="far fa-comment-alt"></i> <i>Resposta</i></p><p> <i class="fas fa-quote-left"></i> <%= resposta.body %> <i class="fas fa-quote-right"> </i><br></p>
+                        </div>
+                    </div>
+                <% }) %>
+            <br>
+        </div>
+    </div>
+</body>
+
+<%- include('../Partials/footer.ejs') %>

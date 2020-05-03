@@ -1,0 +1,35 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #eceff1;
+}
+
+.text {
+    color: #483D8B;
+}
+
+#form-pergunta {
+    margin-top: 5vh;
+}
+
+.bd-callout-info {
+    border-left-color: #f0ad4e;;
+}
+
+.bd-callout-warning {
+    border-left-color: #483D8B;;
+}
+
+.bd-callout-secondary {
+    border-left-color: #808080;
+}
+
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-left-width: .25rem;
+    border-radius: 10px;
+}

@@ -1,0 +1,33 @@
+<%- include('../Partials/header.ejs') %>
+  <body>
+
+    <%- include('../Partials/navbar.ejs') %>
+    <br>
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <h2 class="text-monospace text-secondary">Perguntas Recentes</h2>
+      </div>
+      <hr>
+    </div>
+    
+
+    <div class="container">
+      <% perguntas.forEach(pergunta => { %>
+
+        <br>
+        <div class="card bd-callout bd-callout-secondary">
+          <div class="card-body">
+            <h4><%= pergunta.titulo %></h4>
+            <br>
+            <span class="text">Descrição: <%= pergunta.descricao %></span>
+          <hr>
+            <a href="/pergunta/<%= pergunta.id %>"><button class="btn btn-secondary">Responder <i class="fas fa-reply"></i></button></a>
+          </div>
+        </div>
+        <br>
+      <% }) %>
+
+    </div>
+  </body>
+
+  <%- include('../Partials/footer.ejs') %>
