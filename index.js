@@ -93,6 +93,7 @@ app.post("/responder", (req, res) => {
     })
 })
 
-app.listen(3001,() => {
-    console.log('servidor rodando!')
-})
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+    console.log('Umbler listening on port %s', port);
+});
